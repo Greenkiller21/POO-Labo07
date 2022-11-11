@@ -1,15 +1,13 @@
+import hanoi.CmdHanoiDisplayer;
+import hanoi.Hanoi;
+import hanoi.HanoiDisplayer;
+import hanoi.gui.JHanoi;
+
 public class Main {
     public static void main(String[] args) {
-        Stack<String> stack = new Stack<>();
-        stack.push("0");
-        stack.push("1");
-        stack.push("2");
-        stack.push("3");
+        Hanoi h = new Hanoi(3, new CmdHanoiDisplayer());
+        h.solve();
 
-        System.out.println(stack);
-
-        System.out.println(stack.pop());
-
-        System.out.println(stack);
+        JHanoi h2 = new JHanoi();
     }
 }

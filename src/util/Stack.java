@@ -34,10 +34,11 @@ public class Stack<T> {
     public String toString() {
         StringBuilder res = new StringBuilder();
         StackIterator<T> it = iterator();
+        res.append("[ ");
         while (it.hasNext()) {
-            res.append(it.next().value.toString());
-            if (it.hasNext()) res.append(" ");
+            res.append('<').append(it.next().value).append('>').append(' ');
         }
+        res.append(']');
         return res.toString();
     }
 
