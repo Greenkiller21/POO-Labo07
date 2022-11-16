@@ -1,8 +1,14 @@
 package util;
 
 public class Stack<T> {
+    /**
+     * Sommet de la stack
+     */
     StackElement<T> head;
-    private int count;  // nombre de valeurs dans la Stack
+    /**
+     * nombre de valeurs dans la Stack
+     */
+    private int count;
 
     public Stack() {
         head = new StackElement<>(null, null);
@@ -30,6 +36,10 @@ public class Stack<T> {
         return popped_value;
     }
 
+    /**
+     * Donne la stack actuelle sous le format [ <x> <y> <z> ... ]
+     * @return la stack au format String
+     */
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
@@ -42,6 +52,10 @@ public class Stack<T> {
         return res.toString();
     }
 
+    /**
+     * Convertit la stack actuelle en un tableau d'Object
+     * @return le tableau d'Object convertit
+     */
     public Object[] toArray() {
         Object[] ret = new Object[count];
         StackIterator<T> it = iterator();
@@ -52,6 +66,10 @@ public class Stack<T> {
         return ret;
     }
 
+    /**
+     * Donne un itérateur qui commence au sommet de la stack
+     * @return l'itérateur au sommet de la stack
+     */
     public StackIterator<T> iterator() {
         return new StackIterator<>(head);
     }
