@@ -11,8 +11,13 @@ public class Main {
             try {
                 nbDisk = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                throw new RuntimeException("The number entered was not valid !");
+                throw new RuntimeException("Le nombre entré n'est pas valide !");
             }
+
+            if (nbDisk <= 0) {
+                throw new RuntimeException("Le nombre de disques n'est pas valide !");
+            }
+
             Hanoi h = new Hanoi(nbDisk);
             h.solve();
         }

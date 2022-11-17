@@ -10,7 +10,7 @@ class StackElement<T> {
      */
     T value;
 
-    public StackElement(StackElement<T> next, T value) {
+    StackElement(StackElement<T> next, T value) {
         this.next = next;
         this.value = value;
     }
