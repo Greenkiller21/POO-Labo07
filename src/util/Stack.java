@@ -4,9 +4,10 @@ public class Stack<T> {
     /**
      * Sommet de la stack
      */
-    StackElement<T> head;
+    private final StackElement<T> head;
+
     /**
-     * nombre de valeurs dans la Stack
+     * Nombre de valeurs dans la Stack
      */
     private int count;
 
@@ -26,10 +27,12 @@ public class Stack<T> {
 
     /**
      * Supprime l'objet en sommet de pile
-     * @return l'objet supprimé, null si la stack est vide
+     * @return l'objet supprimé
+     * @throws RuntimeException Si la stack est vide
      */
     public T pop() {
-        if (head.next == null) return null;
+        if (head.next == null)
+            throw new RuntimeException("La stack est vide !");
         T popped_value = head.next.value;
         head.next = head.next.next;
         --count;
