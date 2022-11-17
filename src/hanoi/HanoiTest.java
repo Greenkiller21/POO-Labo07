@@ -17,25 +17,6 @@ class HanoiTest {
         assertThrows(RuntimeException.class, () -> new Hanoi(1, null));
     }
 
-    /**
-     * On retourne true si l'aiguille finale est valide
-     * Aiguille valide : le status de la taille des disque de la dernière
-     * aiguille doit monter de 1 par 1 depuis 1 à nbDisk
-     * Ex. : Avec 3 disques, l'aiguille finale doit avoir 1, 2, 3
-     * @param finalRod Le status de l'aiguille finale
-     * @return Si l'aiguille finale est valide
-     */
-    boolean isFinalRodLegal(int[] finalRod) {
-        int current = 1;
-        for (int diskSize : finalRod) {
-            if (diskSize != current) {
-                return false;
-            }
-            current++;
-        }
-        return true;
-    }
-
     @Test
     void solve() {
         //L'aiguille finale est inversée
@@ -106,5 +87,24 @@ class HanoiTest {
                         One:   [ ]
                         Two:   [ ]
                         Three: [ <1> <2> <3> ]""");
+    }
+
+    /**
+     * On retourne true si l'aiguille finale est valide
+     * Aiguille valide : le status de la taille des disque de la dernière
+     * aiguille doit monter de 1 par 1 depuis 1 à nbDisk
+     * Ex. : Avec 3 disques, l'aiguille finale doit avoir 1, 2, 3
+     * @param finalRod Le status de l'aiguille finale
+     * @return Si l'aiguille finale est valide
+     */
+    boolean isFinalRodLegal(int[] finalRod) {
+        int current = 1;
+        for (int diskSize : finalRod) {
+            if (diskSize != current) {
+                return false;
+            }
+            current++;
+        }
+        return true;
     }
 }
