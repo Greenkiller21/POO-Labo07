@@ -32,8 +32,8 @@ public class StackIterator<T> {
      * Donne l'élément suivant de la stack
      * @return l'élément suivant
      */
-    public StackElement<T> next() {
+    public T next() {
         current = current.next;
-        return current;
+        return current.value;
     }
 }

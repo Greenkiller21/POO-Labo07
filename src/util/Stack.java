@@ -57,7 +57,7 @@ public class Stack<T> {
         StackIterator<T> it = iterator();
         res.append("[ ");
         while (it.hasNext()) {
-            res.append('<').append(it.next().value).append('>').append(' ');
+            res.append('<').append(it.next()).append('>').append(' ');
         }
         res.append(']');
         return res.toString();
@@ -72,7 +72,7 @@ public class Stack<T> {
         StackIterator<T> it = iterator();
         int i = 0;
         while (it.hasNext()) {
-            ret[i++] = it.next().value;
+            ret[i++] = it.next();
         }
         return ret;
     }
