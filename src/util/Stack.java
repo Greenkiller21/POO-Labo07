@@ -1,5 +1,10 @@
 package util;
 
+/**
+ * Pile générique au fonctionnement First In Last Out
+ * @param <T> Le type des valeurs de la pile
+ * @author Dorian Gillioz & Eric Peronetti
+ */
 public class Stack<T> {
     /**
      * Sommet de la stack
@@ -11,6 +16,9 @@ public class Stack<T> {
      */
     private int count;
 
+    /**
+     * Constructeur de la stack, va initialiser le sommet de la Pile générique
+     */
     public Stack() {
         head = new StackElement<>(null, null);
         count = 0;

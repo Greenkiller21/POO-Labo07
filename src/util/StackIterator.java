@@ -1,11 +1,21 @@
 package util;
 
+/**
+ * Itérateur générique sur une pile du même type générique
+ * @param <T> Le type de l'élément de l'itérateur, doit être le même que la pile
+ * @author Dorian Gillioz & Eric Peronetti
+ */
 public class StackIterator<T> {
     /**
      * Element de la stack pointée actuellement par l'itérateur
      */
     private StackElement<T> current;
 
+    /**
+     * Constructeur de l'itérateur qui commence à la position
+     * de la stack donnée en paramètre
+     * @param head Début de l'itérateur
+     */
     StackIterator(StackElement<T> head) {
         current = head;
     }
