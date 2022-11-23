@@ -6,20 +6,25 @@ public class Main {
         if (args.length == 0) {
             new JHanoi();
         }
-        if (args.length == 1) {
-            int nbDisk;
+        else if (args.length == 1) {
+            int nbDisk = -1;
             try {
                 nbDisk = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                throw new RuntimeException("Le nombre entré n'est pas valide !");
+                System.err.println("Le nombre entré n'est pas valide !");
+                System.exit(1);
             }
 
             if (nbDisk <= 0) {
-                throw new RuntimeException("Le nombre de disques n'est pas valide !");
+                System.err.println("Le nombre de disques n'est pas valide !");
+                System.exit(1);
             }
 
             Hanoi h = new Hanoi(nbDisk);
             h.solve();
+        } else {
+            System.err.println("Le nombre de paramètres n'est pas correct !");
+            System.exit(1);
         }
     }
 }
