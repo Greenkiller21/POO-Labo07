@@ -1,7 +1,7 @@
 package util;
 
 /**
- * Pile générique au fonctionnement First In Last Out
+ * Pile générique au fonctionnement Last In First Out
  * @param <T> Le type des valeurs de la pile
  * @author Dorian Gillioz & Eric Peronetti
  */
