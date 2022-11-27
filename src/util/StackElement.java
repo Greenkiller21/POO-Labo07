@@ -3,13 +3,13 @@ package util;
 /**
  * Element générique de la pile qui contient sa valeur et l'élément suivant
  * @param <T> Type de la valeur de l'élément, doit être le même que la pile
- * @author Dorian Gillioz & Eric Peronetti
  */
 class StackElement<T> {
     /**
      * Element suivant de la stack
      */
     StackElement<T> next;
+
     /**
      * Valeur de l'élément
      */

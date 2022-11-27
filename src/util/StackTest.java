@@ -2,11 +2,11 @@ package util;
 
 import org.junit.jupiter.api.Test;
 
-import java.net.Inet4Address;
-import java.util.Iterator;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe permettant de tester la classe Stack
+ */
 class StackTest {
     @Test
     void push() {

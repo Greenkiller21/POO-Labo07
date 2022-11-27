@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe permettant de tester la classe Hanoi
+ */
 class HanoiTest {
     @Test
     void Hanoi() {
@@ -18,15 +21,18 @@ class HanoiTest {
     }
 
     @Test
-    void solve() {
+    void testIsFinalRodLegal() {
         //L'aiguille finale est inversée
         assertFalse(isFinalRodLegal(new int[] {3, 2, 1}));
         //L'aiguille finale à ces deux disques du dessus inversés
         assertFalse(isFinalRodLegal(new int[] {2, 1, 3}));
         //L'aiguille est correcte
         assertTrue(isFinalRodLegal(new int[] {1, 2, 3}));
+    }
 
-        Hanoi h = new Hanoi(3, new NothingHanoiDisplayer());
+    @Test
+    void solve() {
+        Hanoi h = new Hanoi(3, new NoActionHanoiDisplayer());
         h.solve();
         //A la fin de solve l'on doit avoir finished à true
         assertTrue(h.finished());
@@ -34,7 +40,7 @@ class HanoiTest {
         assertEquals(Math.pow(2, 3) - 1, h.turn());
         assertTrue(isFinalRodLegal(h.status()[2]));
 
-        h = new Hanoi(6, new NothingHanoiDisplayer());
+        h = new Hanoi(6, new NoActionHanoiDisplayer());
         h.solve();
         //A la fin de solve l'on doit avoir finished à true
         assertTrue(h.finished());
@@ -45,7 +51,7 @@ class HanoiTest {
 
     @Test
     void status() {
-        Hanoi h = new Hanoi(3, new NothingHanoiDisplayer());
+        Hanoi h = new Hanoi(3, new NoActionHanoiDisplayer());
         assertArrayEquals(new int[] { 1, 2, 3 }, h.status()[0]);
         assertEquals(0, h.status()[1].length);
         assertEquals(0, h.status()[2].length);
@@ -53,7 +59,7 @@ class HanoiTest {
 
     @Test
     void finished() {
-        Hanoi h = new Hanoi(3, new NothingHanoiDisplayer());
+        Hanoi h = new Hanoi(3, new NoActionHanoiDisplayer());
         //Quand on a pas encore commencé, on ne doit pas avoir finished à true
         assertFalse(h.finished());
         h.solve();
@@ -63,7 +69,7 @@ class HanoiTest {
 
     @Test
     void turn() {
-        Hanoi h = new Hanoi(3, new NothingHanoiDisplayer());
+        Hanoi h = new Hanoi(3, new NoActionHanoiDisplayer());
         //Avant de commencer on doit être au tour 0
         assertEquals(0, h.turn());
         h.solve();
@@ -73,7 +79,7 @@ class HanoiTest {
 
     @Test
     void testToString() {
-        Hanoi h = new Hanoi(3, new NothingHanoiDisplayer());
+        Hanoi h = new Hanoi(3, new NoActionHanoiDisplayer());
         //L'affichage pour le premier tour
         assertEquals(h.toString(), """
                         -- Turn: 0

@@ -3,7 +3,6 @@ package util;
 /**
  * Itérateur générique sur une pile du même type générique
  * @param <T> Le type de l'élément de l'itérateur, doit être le même que la pile
- * @author Dorian Gillioz & Eric Peronetti
  */
 public class StackIterator<T> {
     /**

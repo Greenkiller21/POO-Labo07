@@ -2,6 +2,9 @@ package hanoi;
 
 import util.Stack;
 
+/**
+ * Classe permettant la résolution du problème de la tour de Hanoi
+ */
 public class Hanoi {
     /**
      * Le nombre de disques pour lequel résoudre le problème
